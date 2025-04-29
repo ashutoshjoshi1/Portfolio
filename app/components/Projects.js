@@ -32,21 +32,21 @@ export default function Projects() {
     {
       name: 'Pose Estimation for Shopping Mall',
       description: 'A Web app to estimate the pose of a person in a shopping mall from a video.',
-      image: './images/umbc-grading.jpg',
+      image: './images/pose.jpg',
       tags: ['Python', 'Deep Learning', 'Math', 'Web Development', 'Computer Vision'],
       link: 'https://github.com/ashutoshjoshi1/pose-tensorflow'
     },
     {
       name: 'Sarcasm Detection in Twitter',
       description: 'Python script to detect sarcasm in Twitter data using a custom LSTM model.',
-      image: './images/umbc-grading.jpg',
+      image: './images/twitter.jpg',
       tags: ['Python', 'Deep Learning', 'LSTM', 'NLP'],
       link: 'https://github.com/ashutoshjoshi1/Twitter-Sarcasm-Analysis'
     },
     {
       name: 'Graduate Admission Neural Network',
       description: 'A Neural Network to predict the chance of admission of a student to a graduate program based on their GRE, TOEFL, University Rating, Statement of Purpose, Letter of Recommendation, and CGPA scores.',
-      image: './images/umbc-grading.jpg',
+      image: './images/umbc.jpg',
       tags: ['Python', 'Deep Learning', 'Machine Learning', 'Neural Network'],
       link: 'https://github.com/ashutoshjoshi1/Graduate-Admission-Neural-Network-'
     }
