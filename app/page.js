@@ -100,7 +100,7 @@ export default function Home() {
                   <div className="mt-6 flex flex-1 lg:ml-16 lg:mt-0">
                     <div className="flex rounded-full border-8 border-gray-900 transition-all duration-200 ease-in dark:border-green-700 overflow-hidden">
                       <Image
-                        src="/images/ashu.jpeg"
+                        src="/Portfolio/images/ashu.jpeg"
                         alt="Picture of Ashutosh"
                         width={300}
                         height={300}
