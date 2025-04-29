@@ -167,7 +167,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center gap-6 mt-12 mb-0">
                 <a 
-                  href="/resume.pdf" 
+                  href="/Portfolio/resume.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center justify-center px-8 py-4 text-lg font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg dark:bg-green-700 dark:hover:bg-green-800 animate-pulse"
