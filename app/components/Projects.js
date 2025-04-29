@@ -2,6 +2,7 @@
 
 import { useDarkMode } from '../context/DarkModeContext'
 import Image from 'next/image'
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 
 export default function Projects() {
   const { isDarkMode } = useDarkMode()
@@ -52,32 +53,60 @@ export default function Projects() {
   ]
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {projects.map((project, index) => (
         <div
           key={index}
-          className="flex flex-col rounded-lg border border-gray-200 p-6 transition-all duration-200 ease-in hover:border-blue-500 dark:border-gray-700 dark:hover:border-green-500"
+          className="flex flex-col bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
         >
-          <h3 className="mb-2 text-xl font-bold dark:text-white text-gray-800">{project.name}</h3>
-          <p className="mb-4 dark:text-white text-gray-800">{project.description}</p>
-          <div className="mb-4 flex flex-wrap gap-2">
-            {project.tags.map((tag, tagIndex) => (
-              <span
-                key={tagIndex}
-                className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-green-900 dark:text-green-200"
-              >
-                {tag}
-              </span>
-            ))}
+          <div className="relative h-48 md:h-56">
+            <Image
+              src={project.image}
+              alt={project.name}
+              fill
+              className="object-cover"
+            />
           </div>
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-auto text-blue-600 hover:text-blue-800 dark:text-green-500 dark:hover:text-green-400"
-          >
-            View Project →
-          </a>
+          <div className="p-4 md:p-6 flex flex-col flex-grow">
+            <h3 className="text-xl md:text-2xl font-bold mb-2 dark:text-white text-gray-800">
+              {project.name}
+            </h3>
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-4 flex-grow">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tags.map((tag, tagIndex) => (
+                <span
+                  key={tagIndex}
+                  className="px-3 py-1 text-xs md:text-sm rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm md:text-base text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+              >
+                <FaGithub className="text-lg md:text-xl" />
+                <span>View on GitHub</span>
+              </a>
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-sm md:text-base text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
+                >
+                  <FaExternalLinkAlt className="text-lg md:text-xl" />
+                  <span>Live Demo</span>
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       ))}
     </div>

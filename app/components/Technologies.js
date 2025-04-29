@@ -1,6 +1,7 @@
 'use client'
 
 import { useDarkMode } from '../context/DarkModeContext'
+import Image from 'next/image'
 
 export default function Technologies() {
   const { isDarkMode } = useDarkMode()
@@ -25,14 +26,23 @@ export default function Technologies() {
   ]
 
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6">
       {technologies.map((tech, index) => (
         <div
           key={index}
-          className="flex flex-col items-center justify-center rounded-lg border border-gray-200 p-4 transition-all duration-200 ease-in hover:border-blue-500 dark:border-gray-700 dark:hover:border-green-500"
+          className="flex flex-col items-center p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md hover:shadow-lg transition-shadow duration-300"
         >
-          <span className="mb-2 text-3xl">{tech.icon}</span>
-          <span className="text-center font-medium dark:text-white text-gray-800">{tech.name}</span>
+          <div className="w-12 h-12 md:w-16 md:h-16 mb-3 relative">
+            <Image
+              src={tech.icon}
+              alt={tech.name}
+              fill
+              className="object-contain"
+            />
+          </div>
+          <span className="text-sm md:text-base font-medium text-center dark:text-white text-gray-800">
+            {tech.name}
+          </span>
         </div>
       ))}
     </div>

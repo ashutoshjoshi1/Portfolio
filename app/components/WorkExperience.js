@@ -48,19 +48,19 @@ export default function WorkExperience() {
   return (
     <div className="relative">
       {/* Timeline line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 dark:bg-green-800"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-blue-200 dark:bg-green-800 hidden md:block"></div>
       
-      <div className="space-y-12">
+      <div className="space-y-8 md:space-y-12">
         {experiences.map((exp, index) => (
-          <div key={index} className={`relative flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
+          <div key={index} className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? 'md:justify-start' : 'md:justify-end'}`}>
             {/* Timeline dot */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-4 h-4 rounded-full bg-blue-600 dark:bg-green-700 z-10"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 w-4 h-4 rounded-full bg-blue-600 dark:bg-green-700 z-10 hidden md:block"></div>
             
             {/* Content */}
-            <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
+            <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'md:pr-8 md:text-right' : 'md:pl-8'}`}>
               <div className="p-4 rounded-lg shadow-md bg-white dark:bg-gray-800">
                 <div className="flex items-center space-x-2 mb-2">
-                  <div className="h-8 w-8 rounded-full overflow-hidden">
+                  <div className="h-8 w-8 rounded-full overflow-hidden flex-shrink-0">
                     <Image
                       src={exp.logo}
                       alt={`${exp.company} logo`}
@@ -69,11 +69,11 @@ export default function WorkExperience() {
                       className="object-cover"
                     />
                   </div>
-                  <h3 className="text-xl font-bold dark:text-white text-gray-800">{exp.position}</h3>
+                  <h3 className="text-lg md:text-xl font-bold dark:text-white text-gray-800 truncate">{exp.position}</h3>
                 </div>
-                <h4 className="text-lg font-semibold dark:text-white text-gray-800 mb-1">{exp.company}</h4>
+                <h4 className="text-base md:text-lg font-semibold dark:text-white text-gray-800 mb-1 truncate">{exp.company}</h4>
                 <p className="text-sm dark:text-gray-300 text-gray-600 mb-2">{exp.location}</p>
-                <p className="dark:text-white text-gray-800 mb-2">{exp.description}</p>
+                <p className="text-sm md:text-base dark:text-white text-gray-800 mb-2">{exp.description}</p>
                 <p className="text-sm font-medium dark:text-green-400 text-blue-600">{exp.period}</p>
               </div>
             </div>
